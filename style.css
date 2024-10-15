@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --VeryDarkBlue: hsl(234, 12%, 34%);
+    --GrayishBlue: hsl(229, 6%, 66%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(/fonts/poppins-v21-latin-regular.woff2);
+}
+
+main{
+    font-family: 'Poppins';
+    background-color: var(--VeryLightGray);
+}
+
+/*Header*/
+.head{
+    text-align: center;
+    font-size: clamp(.5rem, 0.5rem + 1vw, 1rem);
+    color: var(--VeryDarkBlue);
+    max-width: 100%;
+}
+
+.head h1{
+    font-weight: 100;
+}
+
+.head span{
+    font-weight: bold;
+}
+
+/*Main*/
+.present{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+.card{
+    margin: 1.9em auto;
+    padding: 1.3em;
+    border-radius: 7px;
+    box-shadow: 1px 5px 10px var(--GrayishBlue);
+}
+
+.red{
+    border-top: 4px solid var(--red);
+    grid-area: header;
+}
+
+.blue{
+    border-top: 4px solid var(--blue);
+    grid-area: menu;
+}
+
+.cyan{
+    border-top: 4px solid var(--cyan);
+    grid-area: sidebar;
+}
+
+.orange{
+    border-top: 4px solid var(--orange);
+    grid-area: footer;
+}
+
+.img-icon{
+    display: flex;
+    justify-content: end;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width:790px) {
+    .present{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap:5px 5px;
+        grid-template-areas:
+        ". header ."
+        "sidebar . menu"
+        ". footer .";
+    }
+}
